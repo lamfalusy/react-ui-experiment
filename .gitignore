@@ -1,0 +1,31 @@
+# Eclipse
+.classpath
+.factorypath
+.project
+.settings/
+/application.yml
+target/
+logs/
+.metadata
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Other
+.next/
+node_modules/

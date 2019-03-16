@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Task Manager</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+</head>
+<body>
+
+	<nav class="navbar navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">Task Manager</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="/assignee/create">Create Assignee</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+
+		<div class="starter-template">
+		
+			<h2>Create Assignee</h2>
+		
+			<form action="#" th:action="@{/assignee/create}" th:object="${assignee}" method="post">
+			   	<div class="form-group">
+			   		<label for="name">Name</label>
+			   		<input class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter name" type="text" th:field="*{name}" />
+			   		<small id="nameHelp" class="form-text text-muted">Name of the assignee. Mandatory field.</small>
+			   	</div>
+			    <div class="form-group">
+				    <select class="form-control" th:field="*{role}">
+						<option th:each="role : ${allRole}" 
+					    	th:value="${role}"
+					    	th:text="${role}">${role}</option>
+					</select>
+				</div>
+				<div>
+					<input type="submit" class="btn btn-primary" value="Submit" />
+				</div>
+			</form>
+		</div>
+
+	</div>
+	<!-- /.container -->
+
+	<script type="text/javascript"
+		src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+</html>
